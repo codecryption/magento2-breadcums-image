@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+            <container name="breadcrumbs.main" htmlClass="breadcrumbs-main" htmlTag="div" after="navigation.sections">
+                <container name="breadcrumbs.image.title" htmlClass="breadcrumbs-image-title" htmlTag="div" before="-" />
+                <block class="Magento\Catalog\Block\Category\View" name="category.breadcrumbs.image" 
+                template="Codecryption_BreadcrumbsImage::product/breadcrumbs_image.phtml" after="breadcrumbs">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">
+                        Codecryption\BreadcrumbsImage\ViewModel\BreadcrumbsImage</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <move element="page.main.title" destination="breadcrumbs.image.title" before="-" />
+        <move element="breadcrumbs" destination="breadcrumbs.image.title" before="-" />
+    </body>
+</page>

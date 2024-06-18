@@ -1,0 +1,32 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php
+    $_helper    = $this->helper('Magento\Catalog\Helper\Output');
+    $_category  = $block->getCurrentCategory();
+    $_imgHtml   = '';
+    $viewModel = $block->getData('view_model');
+    
+    if(!$_category) {
+        $currentProduct = $viewModel->getCurrentProduct();
+        if (!isset($currentProduct->getData('category_ids')[0])) {
+            return;
+        } else {
+            $categoryId = $currentProduct->getData('category_ids')[0];
+            $_category = $viewModel->loadCategory($categoryId);
+        }
+    }
+    $imageUrl = $viewModel->getCategoryImage($_category->getData('entity_id'));
+    if ($_imgUrl = $imageUrl) {
+        $_imgHtml = '<div class="product-category-breadcrumbs-image"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '" class="image breadcrumbs-image" /></div>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'breadcrumbs_image');
+        /* @escapeNotVerified */ echo $_imgHtml;
+    }
+?>
