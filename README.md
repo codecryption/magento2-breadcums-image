@@ -13,7 +13,7 @@ Codecryption Breadcums Image Extension is a useful module designed to enhance th
 
 ● SEO Friendliness: Properly optimized breadcrumbs with images can contribute positively to your site's SEO efforts.
 
-## How to install Magento 2 Delete order extension
+## How to install Magento 2 Breadcums Image order extension
 
 ● Download the extension from above given code.
 
