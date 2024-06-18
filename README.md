@@ -1,4 +1,4 @@
-# Magento-2-Breadcumsimages
+# Magento-2-Breadcumsimage
 
 Codecryption Breadcums Image Extension is a useful module designed to enhance the default breadcrumb functionality in Magento 2 by adding images to breadcrumbs. This extension enriches the user experience by visually representing the hierarchical structure of the website navigation.
 
